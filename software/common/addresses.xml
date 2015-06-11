@@ -1,0 +1,128 @@
+<node>
+
+	<node id="AMCHIP_CLOCK_CONTROL_REG" address="0x00008000" permission="rw" />
+	<node id="AMCHIP_CLOCK_STATUS_REG" address="0x00008001" permission="r" />
+	<node id="AMCHIP_SPY_DIVIDER_REG" address="0x0000800a" permission="rw" />
+	<node id="AMCHIP_FIRST_DIVIDER_REG" address="0x00008002" permission="rw" mode="block" size="7"/>
+
+	<node id="GTX_CLOCK_CONTROL_REG" address="0x0000c000" permission="rw" />
+	<node id="GTX_CLOCK_STATUS_REG" address="0x0000c001" permission="r" />
+	<node id="GTX_SPY_DIVIDER_REG" address="0x0000c00a" permission="rw" />
+	<node id="GTX_FIRST_DIVIDER_REG" address="0x0000c002" permission="rw" mode="block" size="7"/>
+
+	<node id="JTAG">
+		<node id="COMMANDS_PTR" address="0x0000F100" mode="single"/>
+		<node id="COMMANDS_MEM" address="0x0000F101" mode="non-inc"/>
+		<node id="CTRL" address="0x0000F200"/>
+		<node id="STATUS" address="0x0000F201"/>
+		<node id="COMMANDS_AMOUNT" address="0x0000F202"/>
+	</node>
+
+	<node id="ADC">
+		<node id="CTRL" address="0x0000FE00"/>
+		<node id="CONFIG" address="0x0000FE01"/>
+		<node id="STATUS" address="0x0000FE02"/>
+		<node id="CH0" address="0x0000FE03" mode="block" size="8"/>
+
+		<node id="ADC_RAM_PTR" address="0x0000FC00" mode="single"/>
+		<node id="ADC_RAM_MEM" address="0x0000FC01" mode="non-inc"/>
+	</node>
+
+	<node id="PATTOUT">
+		<node id="CTRL" address="0x0000FF10">
+			<node id="FREEZE" mask="0x00000001"/>
+			<node id="RESET_ADDRESSES" mask="0x00000002"/>
+			<node id="RESET_COUNTER" mask="0x00000004"/>
+		</node>
+		<node id="MAX_ERR_PER_EVENT" address="0x0000FF11"/>
+		<node id="STREAM_MAX_ADDR" address="0x0000FF12"/>
+		<node id="N_of_ERRORS" address="0x0000FF13"/>
+		<node id="N_of_ERRORNEOUS_EVENTS" address="0x0000FF14"/>
+		<node id="WAIT_AFTER_HOLD_BEFORE_REJECT" address="0x0000FF15"/>
+		<node id="PRBS_ERRORS_TOTAL" address="0x0000FF16"/>
+		<node id="STATUS" address="0x0000FF17"/>
+		<node id="PATTOUT_FREEZE_ADDR" address="0x0000FF18"/>
+		<node id="MISMATCHES_FREEZE_ADDR" address="0x0000FF19"/>
+
+		<node id="PREDICTED_PATTERNS_PTR" address="0x0000FF00" mode="single"/>
+		<node id="PREDICTED_PATTERNS_MEM" address="0x0000FF01" mode="non-inc"/>
+
+		<node id="PATTOUT_PTR" address="0x0000FF02" mode="single"/>
+		<node id="PATTOUT_MEM" address="0x0000FF03" mode="non-inc"/>
+
+		<node id="EXPECTED_PTR" address="0x0000FF04" mode="single"/>
+		<node id="EXPECTED_MEM" address="0x0000FF05" mode="non-inc"/>
+
+		<node id="RECEIVED_PTR" address="0x0000FF06" mode="single"/>
+		<node id="RECEIVED_MEM" address="0x0000FF07" mode="non-inc"/>
+
+		<node id="EXTRA_PTR" address="0x0000FF08" mode="single"/>
+		<node id="EXTRA_MEM" address="0x0000FF09" mode="non-inc"/>
+	</node>
+
+	<node id="GTX">
+		<node id="CTRL" address="0x00000F10">
+			<node id="ENABLED" mask="0x00000001"/>
+			<node id="RESET_CONTROLLERS" mask="0x00000002"/>
+			<node id="RESET_GTX" mask="0x00000010"/>
+			<node id="RESET_PRBS_COUNTER" mask="0x00000100"/>
+			<node id="INIT" mask="0x00001000"/>
+			<node id="SWING" mask="0xF0000000"/>
+		</node>
+		<node id="STATUS" address="0x00000F11"/>
+		<node id="RESET_CTRL" address="0x00000F12"/>
+
+		<node id="HIT0_PTR" address="0x00000F00" mode="single"/>
+		<node id="HIT0_MEM" address="0x00000F01" mode="non-inc"/>
+
+		<node id="HIT1_PTR" address="0x00000F02" mode="single"/>
+		<node id="HIT1_MEM" address="0x00000F03" mode="non-inc"/>
+
+		<node id="HIT2_PTR" address="0x00000F04" mode="single"/>
+		<node id="HIT2_MEM" address="0x00000F05" mode="non-inc"/>
+
+		<node id="HIT3_PTR" address="0x00000F06" mode="single"/>
+		<node id="HIT3_MEM" address="0x00000F07" mode="non-inc"/>
+
+		<node id="HIT4_PTR" address="0x00000F08" mode="single"/>
+		<node id="HIT4_MEM" address="0x00000F09" mode="non-inc"/>
+
+		<node id="HIT5_PTR" address="0x00000F0A" mode="single"/>
+		<node id="HIT5_MEM" address="0x00000F0B" mode="non-inc"/>
+
+		<node id="HIT6_PTR" address="0x00000F0C" mode="single"/>
+		<node id="HIT6_MEM" address="0x00000F0D" mode="non-inc"/>
+
+		<node id="HIT7_PTR" address="0x00000F0E" mode="single"/>
+		<node id="HIT7_MEM" address="0x00000F0F" mode="non-inc"/>
+
+
+		<node id="PATTIN0_PTR" address="0x00000FC0" mode="single"/>
+		<node id="PATTIN0_MEM" address="0x00000FC1" mode="non-inc"/>
+
+		<node id="PATTIN1_PTR" address="0x00000FC2" mode="single"/>
+		<node id="PATTIN1_MEM" address="0x00000FC3" mode="non-inc"/>
+
+
+		<node id="HIT_INSTR_PTR" address="0x00000FC4" mode="single"/>
+		<node id="HIT_INSTR_MEM" address="0x00000FC5" mode="non-inc"/>
+
+		<node id="PATTIN0_INSTR_PTR" address="0x00000FC6" mode="single"/>
+		<node id="PATTIN0_INSTR_MEM" address="0x00000FC7" mode="non-inc"/>
+
+		<node id="PATTIN1_INSTR_PTR" address="0x00000FC8" mode="single"/>
+		<node id="PATTIN1_INSTR_MEM" address="0x00000FC9" mode="non-inc"/>
+	</node>
+
+	<node id="SPY">
+		<node id="CTRL" address="0x00003F10"/>
+		<node id="HOLD_ADDR" address="0x00003F11"/>
+
+		<node id="SPY_PTR" address="0x00003F00" mode="single"/>
+		<node id="SPY_MEM" address="0x00003F01" mode="non-inc"/>
+
+		<node id="SPY_EXTRA_PTR" address="0x00003F02" mode="single"/>
+		<node id="SPY_EXTRA_MEM" address="0x00003F03" mode="non-inc"/>
+	</node>
+
+</node>
